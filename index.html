@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata Peserta Didik</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="background-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="glass-card">
+        <div class="card-header">
+          <h1>Biodata Siswa</h1>
+          <p>Lengkapi atau lihat informasi data diri</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab-btn active" id="tabForm">Isi Form</button>
+          <button class="tab-btn" id="tabData">Lihat Data</button>
+        </div>
+
+        <!-- Bagian Form -->
+        <div id="viewForm" class="view-section active">
+          <form id="biodataForm" class="biodata-form">
+            <div class="form-group">
+              <label for="namaLengkap">Nama Lengkap</label>
+              <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Masukkan nama lengkap Anda" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="nisn">NISN</label>
+              <input type="text" id="nisn" name="nisn" placeholder="Masukkan 10 digit NISN" required pattern="[0-9]{10}" title="NISN harus terdiri dari 10 digit angka">
+            </div>
+
+            <div class="form-group">
+              <label for="jenisKelamin">Jenis Kelamin</label>
+              <div class="custom-select">
+                <select id="jenisKelamin" name="jenisKelamin" required>
+                  <option value="" disabled selected>Pilih jenis kelamin</option>
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tanggalLahir">Tanggal Lahir</label>
+              <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">
+              <span>Simpan Data</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+
+          <div id="notification" class="notification hidden">
+            <p id="notificationMessage"></p>
+          </div>
+        </div>
+
+        <!-- Bagian Tabel -->
+        <div id="viewData" class="view-section hidden">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Nama Lengkap</th>
+                  <th>NISN</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tanggal Lahir</th>
+                </tr>
+              </thead>
+              <tbody id="dataTableBody">
+                <!-- Data akan dimasukkan ke sini melalui JS -->
+              </tbody>
+            </table>
+          </div>
+          <div id="emptyState" class="empty-state">
+            <p>Belum ada data peserta didik yang tersimpan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
