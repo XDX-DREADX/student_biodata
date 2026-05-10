@@ -1,4 +1,4 @@
-export const SCRIPT_URL = ''; // TODO: Replace with your Google Apps Script Web App URL
+export const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxf3laINhVs1ubLtDTdNRQ7_U9Zyjw3waZHhKKGg89RILN5n37wSAqo4Ma1PgTQiFiwjA/exec'; // TODO: Replace with your Google Apps Script Web App URL
 
 export interface Biodata {
   namaLengkap: string;
